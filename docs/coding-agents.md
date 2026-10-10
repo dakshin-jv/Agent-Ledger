@@ -25,7 +25,7 @@ MCP registrations, OAuth grants, and local CLI tools are not shared between codi
 | Codex | `.codex/config.toml` | `.agents/skills/` |
 | Claude Code | `.mcp.json` | `.agents/skills/` |
 
-Install provider skills into `.agents/skills/` (and `skills-lock.json`), not only under `~/.cursor/` or `.cursor/skills/`. Codex also reads `.codex/skills/`. Claude Code also reads `.claude/skills/`.
+Install provider skills into `.agents/skills/` (and `skills-lock.json`). Do not copy or symlink them into `.claude/skills/`, `.codex/skills/`, or `.cursor/skills/`.
 
 Launch local MCP servers with `.env` via `envFile` or a wrapper; never commit secrets. Host docs: [Codex MCP](https://developers.openai.com/learn/docs-mcp), [Cursor MCP](https://docs.cursor.com/context/model-context-protocol), [Claude Code MCP](https://docs.anthropic.com/en/docs/mcp).
 
