@@ -1,0 +1,46 @@
+@import '@bryntum/grid/fontawesome/css/fontawesome.css';
+@import '@bryntum/grid/fontawesome/css/solid.css';
+@import '@bryntum/grid/grid.css';
+@import '@bryntum/grid/svalbard-light.css';
+@import '@bryntum/scheduler/scheduler.css';
+@import '@bryntum/scheduler/svalbard-light.css';
+@import '@bryntum/taskboard/taskboard.css';
+@import '@bryntum/taskboard/svalbard-light.css';
+@import '@bryntum/gantt/gantt.css';
+@import '@bryntum/gantt/svalbard-light.css';
+
+:root {
+  color: #17241f;
+  background: #edf3ef;
+  font-family: Poppins, 'Segoe UI', Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button { font: inherit; }
+#root { min-height: 100vh; }
+.agent-board { min-height: 100vh; padding: 28px; }
+.app-header, .workspace { margin: 0 auto; max-width: 1440px; }
+.app-header { align-items: end; display: flex; justify-content: space-between; margin-bottom: 24px; }
+.eyebrow { color: #497460; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.09em; margin: 0 0 6px; text-transform: uppercase; }
+h1, h2, p { margin-top: 0; }
+h1 { font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -0.04em; margin-bottom: 8px; }
+h2 { font-size: 1.15rem; margin-bottom: 4px; }
+.subtitle, .workspace-heading p { color: #5a6c63; margin-bottom: 0; }
+.environment, .scope { background: #d9ebe1; border-radius: 999px; color: #28523e; font-size: 0.8rem; font-weight: 600; padding: 8px 12px; white-space: nowrap; }
+.view-tabs { display: flex; gap: 8px; margin: 0 auto 14px; max-width: 1440px; overflow-x: auto; }
+.view-tabs button { background: transparent; border: 1px solid transparent; border-radius: 8px; color: #496056; cursor: pointer; font-weight: 600; padding: 10px 14px; }
+.view-tabs button:hover, .view-tabs button:focus-visible { background: #dde9e1; outline: none; }
+.view-tabs button.active { background: #102f23; color: #fff; }
+.workspace { background: #fff; border: 1px solid #d8e2dc; border-radius: 14px; box-shadow: 0 14px 40px rgb(23 53 38 / 9%); min-height: 660px; overflow: hidden; }
+.workspace-heading { align-items: center; border-bottom: 1px solid #dfe7e2; display: flex; justify-content: space-between; padding: 18px 22px; }
+.bryntum-host { height: 590px; }
+
+@media (max-width: 640px) {
+  .agent-board { padding: 16px; }
+  .app-header { align-items: start; flex-direction: column; gap: 14px; }
+  .workspace-heading { align-items: start; gap: 12px; }
+  .bryntum-host { height: 540px; }
+}

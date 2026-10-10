@@ -59,8 +59,6 @@ cover/
 # Django stuff:
 *.log
 local_settings.py
-db.sqlite3
-db.sqlite3-journal
 
 # Flask stuff:
 instance/
@@ -219,12 +217,29 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Claude Code
+# Codex local state. Keep project MCP and the Codex README tracked.
+# Skills for every coding agent live in `.agents/skills/`, not `.codex/skills/`.
+.codex/*
+!.codex/config.toml
+!.codex/README.md
+
+# Claude Code local state
 .claude/
 
-# Cursor
-.cursor/
+# Cursor local state. MCP lives in project `.cursor/mcp.json`; skills live in `.agents/skills`.
+.cursor/*
+!.cursor/mcp.json
 
-# Agent Skills
+# Agent Skills: local skill cache. Install into `.agents/skills/` on each machine; do not commit.
+.agents/skills/
 .agents/
-skills-lock.json
+
+# Bryntum trial archives (download locally; do not commit — ~1GB total)
+frontend/bryntum/*.zip
+
+# Other
+.DS_Store
+.env
+data/
+__pycache__/
+.pytest_cache/

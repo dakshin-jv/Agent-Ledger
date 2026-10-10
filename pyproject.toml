@@ -1,12 +1,16 @@
 [project]
 name = "agent-ledger"
 version = "0.1.0"
-description = "Add your description here"
+description = "Agent-native enterprise commerce ERP prototype"
+license = "MIT"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "channel3-sdk>=4.1.0",
     "deepagents>=0.7.22",
     "langchain>=1.4.3",
     "langchain-sarvam>=0.1.2",
     "langgraph>=1.2.13",
+    "psycopg[binary]>=3.2.0",
+    "pyyaml>=6.0.3",
 ]

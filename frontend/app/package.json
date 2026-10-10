@@ -1,0 +1,30 @@
+{
+  "name": "app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "@bryntum/gantt": "npm:@bryntum/gantt-trial@7.3.7",
+    "@bryntum/gantt-react": "7.3.7",
+    "@bryntum/grid": "npm:@bryntum/grid-trial@7.3.7",
+    "@bryntum/grid-react": "7.3.7",
+    "@bryntum/scheduler": "npm:@bryntum/scheduler-trial@7.3.7",
+    "@bryntum/scheduler-react": "7.3.7",
+    "@bryntum/taskboard": "npm:@bryntum/taskboard-trial@7.3.7",
+    "@bryntum/taskboard-react": "7.3.7",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  }
+}

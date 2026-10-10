@@ -1,0 +1,41 @@
+[mcp_servers.postman]
+url = "https://mcp.postman.com/mcp"
+
+[mcp_servers.paypal-sandbox]
+command = "zsh"
+args = ["-lc", """agentledger_paypal_client_id="$(sed -n 's/^PAYPAL_CLIENT_ID=//p' '.env')"; agentledger_paypal_secret="$(sed -n 's/^PAYPAL_CLIENT_SECRET=//p' '.env')"; agentledger_paypal_token="$(curl --silent --show-error --user "${agentledger_paypal_client_id}:${agentledger_paypal_secret}" --data 'grant_type=client_credentials' 'https://api-m.sandbox.paypal.com/v1/oauth2/token' | python3 -c 'import json, sys; print(json.load(sys.stdin)["access_token"])')"; exec npx -y mcp-remote 'https://mcp.sandbox.paypal.com/sse' --header "Authorization: Bearer ${agentledger_paypal_token}""""]
+
+[mcp_servers.render]
+url = "https://mcp.render.com/mcp"
+
+[mcp_servers.render.oauth]
+client_id = "codex"
+
+[mcp_servers.elastic-docs]
+url = "https://www.elastic.co/docs/_mcp/"
+
+[mcp_servers.elastic-agent-builder]
+command = "zsh"
+args = ["-lc", 'agentledger_elastic_url="$(sed -n "s/^ELASTIC_AGENT_BUILDER_MCP_URL=//p" ".env")"; agentledger_elastic_key="$(sed -n "s/^ELASTIC_API_KEY=//p" ".env")"; exec npx -y mcp-remote "$agentledger_elastic_url" --header "Authorization:ApiKey $agentledger_elastic_key"']
+
+[mcp_servers.channel3]
+command = "zsh"
+args = ["-lc", 'agentledger_channel3_key="$(sed -n "s/^CHANNEL3_API_KEY=//p" ".env")"; exec npx -y mcp-remote "https://mcp.trychannel3.com" --header "Authorization: Bearer ${agentledger_channel3_key}"']
+
+[mcp_servers.sarvam]
+command = "zsh"
+args = ["-lc", 'SARVAM_API_KEY="$(sed -n "s/^SARVAM_API_KEY=//p" ".env")" exec uvx sarvam-mcp']
+
+[mcp_servers.typesafe]
+command = "zsh"
+args = ["-lc", 'TYPESAFE_API_KEY="$(sed -n "s/^TYPESAFE_API_KEY=//p" ".env")" TYPESAFE_DEFAULT_MODEL="jev-latest" exec uvx --from "typesafe-mcp==0.5.2" typesafe-mcp']
+
+[mcp_servers.bryntum]
+url = "https://mcp.bryntum.com"
+
+[mcp_servers.ag-grid]
+command = "npx"
+args = ["-y", "ag-mcp"]
+
+[mcp_servers.context7]
+url = "https://mcp.context7.com/mcp"
