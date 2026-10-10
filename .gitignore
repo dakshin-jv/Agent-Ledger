@@ -218,3 +218,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Claude Code
+.claude/
+
+# Cursor
+.cursor/
+
+# Agent Skills
+.agents/
+skills-lock.json
