@@ -63,7 +63,7 @@ Do not place API keys in committed MCP JSON/TOML. Use `.env` or provider OAuth.
 | `elastic-docs` | Official Elastic documentation | Remote `https://www.elastic.co/docs/_mcp/` | Docs only; no business data |
 | `elastic-agent-builder` | Bounded search / Agent Builder work | [Agent Builder MCP](https://www.elastic.co/docs/solutions/search/agent-builder/mcp-server) | Least-privilege API key |
 | `channel3` | Catalog exploration during procurement work | Remote `https://mcp.trychannel3.com` | API key from `.env`; persist through backend |
-| `sarvam` | Language and voice discovery | Local stdio [Sarvam MCP](https://docs.sarvam.ai/api/developer-tools/mcp) | `SARVAM_API_KEY`; production via adapter |
+| `sarvam` | Sarvam service map; languages, voice, and API discovery | Local stdio [Sarvam MCP](https://docs.sarvam.ai/api/developer-tools/mcp) | `SARVAM_API_KEY`; production via adapter |
 | `typesafe` | Development assistance | Community adapter; [TypeSafe API](https://docs.typesafe.ai/) is authoritative | Not an official hosted data MCP |
 | `bryntum` | Component documentation | Remote `https://mcp.bryntum.com` | Docs/dev only |
 | `ag-grid` | Grid evaluation when a product decision calls for it | Local [AG Grid MCP](https://github.com/ag-grid/ag-mcp) | Bryntum Grid is the application grid |
@@ -78,6 +78,7 @@ Do not place API keys in committed MCP JSON/TOML. Use `.env` or provider OAuth.
 | Render deploy or debug | Relevant `render-*` skills | `render` |
 | PayPal integration | APIMatic plugin | `paypal-sandbox` (optionally `postman`) |
 | Channel3 / Sarvam / Elastic | Matching skill where it exists | Matching provider MCP for that session only |
+| Procurement lifecycle (not harness kit) | `channel3-api`, `typesafe-ai` | One of `channel3`, `typesafe`, `sarvam` for that slice |
 | TypeSafe judgments | `typesafe-ai` | `typesafe` only for experiments |
 | General library docs | — | `context7` |
 
@@ -87,11 +88,15 @@ Full skill/MCP/runtime rules live in the service file. Use this table only to pi
 
 | Working on… | Open |
 | --- | --- |
+| Procurement goods lifecycle, guided intake | [`procurement.md`](procurement.md) |
 | Approvals, audit, tenancy, `FoundationStore`, PostgreSQL | [`render.md`](render.md) |
 | Deploy, env groups, Workflows, Cron | [`render.md`](render.md) |
+| Product-agent harness contract (reference; not a build track) | [`render_agent_sdk.md`](render_agent_sdk.md) |
+| Guardrails (authority, tool class, persist gate) | [`guardrails.md`](guardrails.md) |
+| Observability (case/Work, Render logs; no agent save) | [`observability.md`](observability.md) |
 | PayPal sandbox, Postman, payment adapter | [`paypal.md`](paypal.md) |
 | Catalog search | [`channel3.md`](channel3.md) |
-| Language / voice | [`sarvam.md`](sarvam.md) |
+| Sarvam (map, speech, text, Doc-AI) | [`sarvam.md`](sarvam.md) |
 | Retrieval / Agent Builder | [`elastic.md`](elastic.md) |
 | Typed extraction / routing | [`typesafe.md`](typesafe.md) |
 | Grid, TaskBoard, Scheduler, Gantt | [`bryntum.md`](bryntum.md) |
@@ -109,6 +114,8 @@ Full skill/MCP/runtime rules live in the service file. Use this table only to pi
 
 When a provider offers an official MCP and an SDK/API, prefer MCP through the Agent Ledger policy adapter. Keep the SDK/API as a tested fallback for unsupported MCP capabilities, outages, webhooks, or deterministic background work. Financial actions require approval, idempotency, and audit. An autonomous agent must never receive unrestricted payment, refund, payout, dispute, or raw database access.
 
+**Loops (coding vs product):** Cursor `/loop` and Automations schedule **session** work. Product-agent outer/inner loops and HITL are the superseded contract in [`render_agent_sdk.md`](render_agent_sdk.md#loops) — reference only, not a kit to build.
+
 ## Related
 
-[`AGENTS.md`](../AGENTS.md) · [`.env.example`](../.env.example)
+[`AGENTS.md`](../AGENTS.md) · [`procurement.md`](procurement.md) · [`.env.example`](../.env.example)

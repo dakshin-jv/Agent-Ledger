@@ -45,7 +45,7 @@ the user has not authorized.
 | Area | Kind | Stage | Status | Human developer remarks |
 | --- | --- | --- | --- | --- |
 | Orders / O2C | Cross-functional | docs | pending | |
-| Procurement / P2P / S2P (goods) | Cross-functional | docs | inprogress | |
+| Procurement / P2P / S2P (goods) | Cross-functional | docs | inprogress | Lifecycle: [`docs/procurement.md`](docs/procurement.md) |
 | Inventory / receiving | Operations | docs | pending | |
 | AP | Finance | docs | pending | |
 | AR | Finance | docs | pending | |
@@ -61,10 +61,14 @@ the user has not authorized.
 | Open | When | Not for |
 | --- | --- | --- |
 | [`docs/coding-agents.md`](docs/coding-agents.md) | New coding client, MCP/skill install, which MCP to enable this session | Provider API contracts or runtime adapter rules |
+| [`docs/procurement.md`](docs/procurement.md) | Goods P2P lifecycle, procurement agent, guided intake | PayPal/Channel3 API contracts, harness/Blueprint, or coding-agent MCP setup |
 | [`docs/paypal.md`](docs/paypal.md) | Sandbox orders, invoices, refunds, Postman collection, payment adapter | Catalog search, deploy, UI grid |
 | [`docs/render.md`](docs/render.md) | Deploy, env groups, PostgreSQL, Workflows, Cron, Render MCP | Provider catalog/search or Bryntum widgets |
+| [`docs/render_agent_sdk.md`](docs/render_agent_sdk.md) | Frozen harness contract (reference only): loops, HITL `hitl`, invoke/resume, one Blueprint. Do not implement the kit from this file | Runtime LangChain/Deep Agents, Cursor MCP setup, provider API contracts |
+| [`docs/guardrails.md`](docs/guardrails.md) | Policies that bound `invoke` / `resume`: authority, isolation, tool class, persist gate | Observability, Render ops, provider API contracts |
+| [`docs/observability.md`](docs/observability.md) | What a tick may show or log; no agent-run save this pass | Guardrail catalog, Elastic retrieval, Intelligence UI |
 | [`docs/channel3.md`](docs/channel3.md) | Product search, offers, provenance on catalog data | Payments or Render ops |
-| [`docs/sarvam.md`](docs/sarvam.md) | STT/TTS/translate/LLM in a workflow | Persistence or payments |
+| [`docs/sarvam.md`](docs/sarvam.md) | Sarvam service map; STT/TTS/translate/LLM/Doc-AI in a workflow | Persistence or payments |
 | [`docs/elastic.md`](docs/elastic.md) | Retrieval, Agent Builder, index/API fallback | Transactional store |
 | [`docs/typesafe.md`](docs/typesafe.md) | Typed extraction, routing, verification | Treating community MCP as runtime authority |
 | [`docs/bryntum.md`](docs/bryntum.md) | Grid, TaskBoard, Scheduler, Gantt, bundle split | A second production grid |

@@ -65,4 +65,4 @@ Official links: [Bryntum MCP](https://mcp.bryntum.com) · [Agent skills](https:/
 
 ## Related
 
-[`coding-agents.md`](coding-agents.md)
+[`coding-agents.md`](coding-agents.md) · [`procurement.md`](procurement.md)

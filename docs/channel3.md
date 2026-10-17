@@ -44,4 +44,4 @@ Official links: [Channel3](https://www.trychannel3.com/) · [API docs](https://d
 
 ## Related
 
-[`coding-agents.md`](coding-agents.md) · [`render.md`](render.md) · [`typesafe.md`](typesafe.md)
+[`procurement.md`](procurement.md) · [`coding-agents.md`](coding-agents.md) · [`render.md`](render.md) · [`typesafe.md`](typesafe.md)

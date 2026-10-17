@@ -44,4 +44,4 @@ Official links: [TypeSafe](https://typesafe.ai/) · [API docs](https://docs.type
 
 ## Related
 
-[`coding-agents.md`](coding-agents.md) · [`channel3.md`](channel3.md)
+[`coding-agents.md`](coding-agents.md) · [`channel3.md`](channel3.md) · [`procurement.md`](procurement.md) · [`render_agent_sdk.md`](render_agent_sdk.md) (harness contract, reference only)

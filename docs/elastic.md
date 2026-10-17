@@ -2,7 +2,7 @@
 
 **Read when:** retrieval, Agent Builder, or Elasticsearch API fallback.
 
-**Do not use for:** the transactional store ([`render.md`](render.md) PostgreSQL).
+**Do not use for:** the transactional store ([`render.md`](render.md) PostgreSQL); an agent-run or transcript store this pass ([`observability.md`](observability.md)).
 
 ## Role in Agent Ledger
 
@@ -40,4 +40,4 @@ Official links: [Elastic Cloud](https://cloud.elastic.co/) · [Agent Builder MCP
 
 ## Related
 
-[`coding-agents.md`](coding-agents.md) · [`render.md`](render.md)
+[`coding-agents.md`](coding-agents.md) · [`procurement.md`](procurement.md) · [`render.md`](render.md) · [`observability.md`](observability.md)

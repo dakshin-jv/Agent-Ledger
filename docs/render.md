@@ -8,7 +8,7 @@
 
 ## Role in Agent Ledger
 
-Render hosts the API, Workflows, Cron, and PostgreSQL. Product agents = **Workflow tasks** (Python SDK). Coding agents (Cursor, Claude Code, Codex) use **Render MCP** for infra only.
+Render hosts the API, Workflows, Cron, and PostgreSQL. Product-agent loops, HITL, and Blueprint split policy: superseded contract in [`render_agent_sdk.md`](render_agent_sdk.md) (reference; do not implement the kit from that file). Coding agents (Cursor, Claude Code, Codex) use **Render MCP** for infra only.
 
 ## Features
 
@@ -60,6 +60,14 @@ Services: **internal** URL, same region. Local: **external** + TLS.
 5. Local: `render workflows dev -- <start>`. Deploy: Blueprint `type: workflow` (no service `plan`) or CLI. **MCP cannot create Workflows.**
 6. No `psycopg` in the task. Private-net to API/Postgres in-region (runs **initiate** connections; no inbound ports).
 
+### Blueprint (multi-service)
+
+One `render.yaml` is the IaC for this product: web API, static UI, Postgres, Workflow, later Cron, env groups. [Spec](https://render.com/docs/blueprint-spec) · [IaC](https://render.com/docs/infrastructure-as-code). Skill: `render-blueprints`.
+
+- Workflow: `type: workflow`, **no** service `plan`, `region` + `repo` + `buildCommand` required. Previews skip Workflow copy.
+- Wire with `fromDatabase` / `fromService` / `fromGroup`. Do not manage the same resource in two Blueprints.
+- Replicating a Blueprint creates an **independent** stack (name suffixes). That is not O2C vs P2P vs R2R. Department graphs are code/tasks on **one** API and one DB. Per-dept split (reference): [`render_agent_sdk.md`](render_agent_sdk.md).
+
 ### Cron
 
 UTC, no disk, no DB, HTTP API. Pair with Workflows for schedules ([FAQ](https://render.com/docs/workflows)).
@@ -104,4 +112,4 @@ Official: [Dashboard](https://dashboard.render.com/) · [docs](https://render.co
 
 ## Related
 
-[`coding-agents.md`](coding-agents.md) · [`plan/BUILD_START_HERE.md`](../plan/BUILD_START_HERE.md)
+[`render_agent_sdk.md`](render_agent_sdk.md) · [`observability.md`](observability.md) · [`procurement.md`](procurement.md) · [`coding-agents.md`](coding-agents.md) · [`plan/BUILD_START_HERE.md`](../plan/BUILD_START_HERE.md)

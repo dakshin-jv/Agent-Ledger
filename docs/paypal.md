@@ -56,4 +56,4 @@ Official links: [Developer Dashboard](https://developer.paypal.com/dashboard/app
 
 ## Related
 
-[`coding-agents.md`](coding-agents.md) · [`render.md`](render.md)
+[`coding-agents.md`](coding-agents.md) · [`procurement.md`](procurement.md) · [`render.md`](render.md)
