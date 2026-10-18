@@ -97,3 +97,20 @@ Business owner approves goods specifications for now; RBAC implementation planne
 # Latest scheduling and RBAC direction
 
 RBAC will be implemented; current delivery is design only. Render Cron Jobs plus Workflows recommended for owner reminders/retries, with immediate initial notification via outbox. See [scheduled owner notifications](/architecture/scheduled-owner-notifications.md). This supersedes earlier RBAC-deferral wording. Delivery timing/channel and detailed permission policy await review.
+
+# Draft rough spec reconciliation (2026-10-18)
+
+Repo drafts `docs/agent-ledger-architecture-spec.md`, `docs/agent-ledger-department-matrix.md` and `docs/deployment/render.blueprint.draft.yaml` are proposals, not decisions. Where they conflict, the standing entry below holds until the user decides.
+
+| ID | Draft proposal | Conflicts with | Standing until decided |
+|---|---|---|---|
+| P-01 | Next.js + AG Grid frontend | `frontend/app` React/Vite + Bryntum; `docs/bryntum.md` (AG Grid evaluation only) | Bryntum is the production UI; AG Grid evaluation only (D-18) |
+| P-02 | Key Value queue for A2A tasks; Background Worker per department | D-15 Postgres sole store; outbox in Postgres | Postgres authoritative; Key Value only as optional cache/lock |
+| P-03 | SQLite for local dev | BUILD_START_HERE step 4 | Render PostgreSQL locally too |
+| P-04 | TypeSafe only when key set, else fallback | `docs/typesafe.md` (TypeSafe required) | TypeSafe required; fallback is degraded mode |
+| P-05 | LangGraph + deepagents, one MCP server per department | `docs/render_agent_sdk.md` harness; backend policy adapter | Harness + policy adapter; per-department MCP pending review |
+| P-06 | Ten departments incl. HR, Manufacturing, Projects | AGENTS.md capability table; goods-only scope; D-17 | Only authorised rows; extras parked |
+| P-07 | Finance-first build order to Nov 12 | R-01/R-02/R-08; Procurement in progress | Procurement stays first |
+| P-08 | Multi-provider Model Gateway | R-09 sponsor priorities | Sarvam + TypeSafe; gateway interface allowed |
+
+Adoptable without conflict (still proposals): typed Pydantic decision contracts, money rail as sole PayPal caller, `plugin.yaml` permission manifest, real PayPal API names only.

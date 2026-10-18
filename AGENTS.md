@@ -74,4 +74,9 @@ the user has not authorized.
 | [`docs/bryntum.md`](docs/bryntum.md) | Grid, TaskBoard, Scheduler, Gantt, bundle split | A second production grid |
 | [`plan/BUILD_START_HERE.md`](plan/BUILD_START_HERE.md) | Scope, access checklist, execution order | Day-to-day adapter implementation |
 | [`plan/ERP_Design_OKF_Bundle/`](plan/ERP_Design_OKF_Bundle/) | Workflows, UX, data contracts | Coding-agent MCP setup |
-| [`plan/compare_top_tier_erp_sys/`](plan/compare_top_tier_erp_sys/) | How SAP/Oracle/etc. use agents vs this design | Provider setup or implementation |
+| [`docs/compare_top_tier_erp_sys/`](docs/compare_top_tier_erp_sys/) | How SAP/Oracle/etc. use agents vs this design | Provider setup or implementation |
+| [`docs/agent-ledger-architecture-spec.md`](docs/agent-ledger-architecture-spec.md) | Draft proposal: plugin departments, Model Gateway, A2A/MCP layers | Overriding OKF decisions or the docs above; see OKF decisions P-01..P-08 |
+| [`docs/agent-ledger-department-matrix.md`](docs/agent-ledger-department-matrix.md) | Draft proposal: per-department agents, tools, PayPal APIs, workflow catalog | Authorizing a department row above |
+| [`docs/deployment/render.blueprint.draft.yaml`](docs/deployment/render.blueprint.draft.yaml) | Draft Blueprint to reconcile with `docs/render.md` | Deploying as-is |
+
+The three `agent-ledger-*` / blueprint drafts are proposals. Where they disagree with `plan/BUILD_START_HERE.md`, the OKF bundle, or a provider doc, those win until a dated decision in [`progress/decisions.md`](plan/ERP_Design_OKF_Bundle/progress/decisions.md) says otherwise.

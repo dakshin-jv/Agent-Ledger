@@ -1,5 +1,9 @@
 # ERP Design Bundle Update Log
 
+## 2026-10-18
+
+- **Reconciliation**: Linked repo draft specs (`docs/agent-ledger-*.md`, draft Render Blueprint) as proposals P-01..P-08 in [decisions](/progress/decisions.md), with standing choices where they conflict. No decision changed; no build/deploy.
+
 ## 2026-10-07
 
 - **Update — revision 0.5.0**: Added goods Specification Agent design and confirmed business-owner routing: non-owner submits pending owner decision plus notification; RBAC implementation planned; Render Cron Jobs/Workflows scheduled notifications; version-bound approval, fallback and undo controls documented. No build/configuration/tests.

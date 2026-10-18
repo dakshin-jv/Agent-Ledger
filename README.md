@@ -17,7 +17,7 @@ Stage and status: [`AGENTS.md`](AGENTS.md). Checkpoint: [`plan/ERP_Design_OKF_Bu
 | How agents work in this repo | [`AGENTS.md`](AGENTS.md) |
 | Coding agent setup | [`docs/coding-agents.md`](docs/coding-agents.md) |
 | One provider | The matching file in [`docs/`](docs/) |
-| Comparison with other ERPs | [`plan/compare_top_tier_erp_sys/`](plan/compare_top_tier_erp_sys/) |
+| Comparison with other ERPs | [`docs/compare_top_tier_erp_sys/`](docs/compare_top_tier_erp_sys/) |
 
 ## External tools
 
